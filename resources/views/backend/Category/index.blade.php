@@ -34,34 +34,34 @@
                 
 <input type="hidden" name="id" id="id" >
                      <div class="form-group" style="width:100%">
-                        <h5>Brand Name (EN) <span class="text-danger">*</span></h5>
+                        <h5>category Name (EN) <span class="text-danger">*</span></h5>
                         <div class="controls">
-                           <input type="text" name="brand_name_en"  id="brand_name_en" placholder="Brand Name En" class="form-control" required="" data-validation-required-message="This field is required"> 
+                           <input type="text" name="category_name_en"  id="category_name_en" placholder="category Name En" class="form-control" required="" data-validation-required-message="This field is required"> 
                            <div class="help-block"></div>
                         </div>
                      </div>
                      <div class="form-group" style="width:100%">
-                        <h5>Brand Name (AR) <span class="text-danger">*</span></h5>
+                        <h5>category Name (AR) <span class="text-danger">*</span></h5>
                         <div class="controls">
-                           <input type="text" name="brand_name_ar" id="brand_name_ar" placholder="Brand Name Ar" class="form-control" required="" data-validation-required-message="This field is required"> 
+                           <input type="text" name="category_name_ar" id="category_name_ar" placholder="category Name Ar" class="form-control" required="" data-validation-required-message="This field is required"> 
                            <div class="help-block"></div>
                         </div>
                      </div>
                      <div class="row">
                          <div class="col-6">
                             <div class="form-group" style="width:100%">
-                                <h5>Brand Slug (En) <span class="text-danger">*</span></h5>
+                                <h5>category Slug (En) <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                   <input type="text" name="brand_slug_en" id="brand_slug_en"  placholder="Brand Slug En" class="form-control" required="" data-validation-required-message="This field is required"> 
+                                   <input type="text" name="category_slug_en" id="category_slug_en"  placholder="category Slug En" class="form-control" required="" data-validation-required-message="This field is required"> 
                                    <div class="help-block"></div>
                                 </div>
                              </div>
                          </div>
                          <div class="col-6">
                             <div class="form-group" style="width:100%">
-                                <h5>Brand Slug (AR) <span class="text-danger">*</span></h5>
+                                <h5>category Slug (AR) <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                   <input type="text" name="brand_slug_ar" id="brand_slug_ar"   placholder="Brand slug Ar" class="form-control" required="" data-validation-required-message="This field is required"> 
+                                   <input type="text" name="category_slug_ar" id="category_slug_ar"   placholder="category slug Ar" class="form-control" required="" data-validation-required-message="This field is required"> 
                                    <div class="help-block"></div>
                                 </div>
                              </div>
@@ -69,9 +69,9 @@
 
                          <div class="col-6">
                             <div class="form-group">
-                                <h5>Brand Status <span class="text-danger">*</span></h5>
+                                <h5>category Status <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <select name="brand_status" id="brand_status"  class="form-control" aria-invalid="false">
+                                    <select name="category_status" id="category_status"  class="form-control" aria-invalid="false">
                                         <option selected>Select status</option>
                                         <option value="1">Active</option>
                                         <option value="0">Inactive</option>
@@ -85,9 +85,9 @@
 
                          <div class="col-6">
                             <div class="form-group">
-                                <h5>Brand Image <span class="text-danger">*</span></h5>
+                                <h5>category Image <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="file" name="brand_image" id="brand_image" class="form-control"  aria-invalid="false"> <div class="help-block"></div></div>
+                                    <input type="file" name="category_image" id="category_image" class="form-control"  aria-invalid="false"> <div class="help-block"></div></div>
                             </div>
                          </div>
 
@@ -161,19 +161,19 @@
                                     </tr>
                                  </thead>
                                  <tbody>
-                                     @if (!empty($brands))
-                                     @foreach ( $brands as $brand )
+                                     @if (!empty($categories))
+                                     @foreach ( $categories as $category )
                                          
                                      <tr role="row" class="odd">
                                         <td class="sorting_1">Image</td>
-                                        <td>{{$brand->brand_name_en}}
-                                            <small>( Slug: {{$brand->brand_slug_en}} )</small>
+                                        <td>{{$category->category_name_en}}
+                                            <small>( Slug: {{$category->category_slug_en}} )</small>
                                         </td>
-                                        <td>{{$brand->brand_name_ar}}
-                                            <small>( Slug: {{$brand->brand_slug_ar}} )</small>
+                                        <td>{{$category->category_name_ar}}
+                                            <small>( Slug: {{$category->category_slug_ar}} )</small>
                                         </td>
                                         <td>
-                                        @if ($brand->brand_status == 'Active')
+                                        @if ($category->category_status == 'Active')
                                         
                                         <span class="badge badge-success">Active</span>
 
@@ -185,8 +185,8 @@
                                     </td>
                                         
                                         <td>
-                                            <a    id="{{$brand->id}}"  data-toggle="modal" data-target="#exampleModal"  class="editall btn btn-sm btn-primary" title="Edit Brand"><i class="fas fa-edit"></i></a>
-                                            <a onclick="deleteConfirmation({{$brand->id}})"   class="removeall btn btn-sm btn-danger" title="Remove Brand"><i class="fas fa-trash"></i></a>
+                                            <a    id="{{$category->id}}"  data-toggle="modal" data-target="#exampleModal"  class="editall btn btn-sm btn-primary" title="Edit category"><i class="fas fa-edit"></i></a>
+                                            <a onclick="deleteConfirmation({{$category->id}})"   class="removeall btn btn-sm btn-danger" title="Remove category"><i class="fas fa-trash"></i></a>
  
                                         </td>
                                       
@@ -216,31 +216,31 @@
          <div class="col-md-4 col-12">
             <div class="box">
                <div class="card-header">
-                  <h3>Add New Brand</h3>
+                  <h3>Add New category</h3>
                </div>
                <div class="box-body">
                    
              
-                    <form method="POST" action="{{route('add.brand')}}" >
+                    <form method="POST" action="{{route('add.category')}}" >
                         @csrf
 
                              <div class="form-group" style="width:100%">
-                                <h5>Brand Name (EN) <span class="text-danger">*</span></h5>
+                                <h5>category Name (EN) <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                   <input type="text" name="brand_name_en"  placholder="Brand Name En" class="form-control"  > 
+                                   <input type="text" name="category_name_en"  placholder="category Name En" class="form-control"  > 
                                    <div class="help-block">
-                                       @error('brand_name_en')
+                                       @error('category_name_en')
                                            <span class="text-danger">{{$message}}</span>
                                        @enderror
                                    </div>
                                 </div>
                              </div>
                              <div class="form-group" style="width:100%">
-                                <h5>Brand Name (AR) <span class="text-danger">*</span></h5>
+                                <h5>category Name (AR) <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                   <input type="text" name="brand_name_ar"  placholder="Brand Name Ar" class="form-control"  > 
+                                   <input type="text" name="category_name_ar"  placholder="category Name Ar" class="form-control"  > 
                                    <div class="help-block">
-                                    @error('brand_name_ar')
+                                    @error('category_name_ar')
                                     <span class="text-danger">{{$message}}</span>
                                 @enderror
                                    </div>
@@ -249,11 +249,11 @@
                              <div class="row">
                                  <div class="col-6">
                                     <div class="form-group" style="width:100%">
-                                        <h5>Brand Slug (En) <span class="text-danger">*</span></h5>
+                                        <h5>category Slug (En) <span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                           <input type="text" name="brand_slug_en"  placholder="Brand Slug En" class="form-control"  > 
+                                           <input type="text" name="category_slug_en"  placholder="category Slug En" class="form-control"  > 
                                            <div class="help-block">
-                                            @error('brand_slug_en')
+                                            @error('category_slug_en')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror
                                            </div>
@@ -262,10 +262,10 @@
                                  </div>
                                  <div class="col-6">
                                     <div class="form-group" style="width:100%">
-                                        <h5>Brand Slug (AR) <span class="text-danger">*</span></h5>
+                                        <h5>category Slug (AR) <span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                           <input type="text" name="brand_slug_ar"  placholder="Brand slug Ar" class="form-control" > 
-                                           <div class="help-block"> @error('brand_slug_ar')
+                                           <input type="text" name="category_slug_ar"  placholder="category slug Ar" class="form-control" > 
+                                           <div class="help-block"> @error('category_slug_ar')
                                             <span class="text-danger">{{$message}}</span>
                                         @enderror</div>
                                         </div>
@@ -274,9 +274,9 @@
 
                                  <div class="col-6">
                                     <div class="form-group">
-                                        <h5>Brand Status <span class="text-danger">*</span></h5>
+                                        <h5>category Status <span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <select name="brand_status" id="brand_status"  class="form-control" aria-invalid="false">
+                                            <select name="category_status" id="category_status"  class="form-control" aria-invalid="false">
                                                 <option selected>Select status</option>
                                                 <option value="1">Active</option>
                                                 <option value="0">Inactive</option>
@@ -290,9 +290,9 @@
 
                                  <div class="col-6">
                                     <div class="form-group">
-                                        <h5>Brand Image <span class="text-danger">*</span></h5>
+                                        <h5>category Image <span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <input type="file" name="brand_image" class="form-control"  aria-invalid="false"> <div class="help-block"></div></div>
+                                            <input type="file" name="category_image" class="form-control"  aria-invalid="false"> <div class="help-block"></div></div>
                                     </div>
                                  </div>
 
@@ -330,16 +330,16 @@
     var id = this.id;
     
        $.ajax({
-             url: "{{url('/admin/brand/edit')}}/" + id,
+             url: "{{url('/admin/category/edit')}}/" + id,
 
      
              success: function(data){
                 $('#id').val(data.data.id);
-                $('#brand_name_en').val(data.data.brand_name_en);
-                $('#brand_name_ar').val(data.data.brand_name_ar);
-                $('#brand_slug_en').val( data.data.brand_slug_en);
-                $('#brand_slug_ar').val( data.data.brand_slug_ar);
-                $('#brand_status option').val( data.data.brand_status);
+                $('#category_name_en').val(data.data.category_name_en);
+                $('#category_name_ar').val(data.data.category_name_ar);
+                $('#category_slug_en').val( data.data.category_slug_en);
+                $('#category_slug_ar').val( data.data.category_slug_ar);
+                $('#category_status option').val( data.data.category_status);
           }
         });
  });
@@ -362,7 +362,7 @@
 
                 $.ajax({
                     type: 'POST',
-                    url: "{{url('/admin/brand/remove')}}/" + id,
+                    url: "{{url('/admin/category/remove')}}/" + id,
                     data: {_token: CSRF_TOKEN},
                     dataType: 'JSON',
                     success: function (results) {
@@ -407,24 +407,24 @@ e.preventDefault();
             if (e === true) {
     let _token = $('meta[name="csrf-token"]').attr('content');
     let id =  $('#id').val();
-    let enName =  $('#brand_name_en').val();
-    let arName =  $('#brand_name_ar').val();
-    let enSlug =  $('#brand_slug_en').val();
-    let arSlug =  $('#brand_slug_ar').val();
-    let status = $('#brand_status option:selected').text();
-    let image = $('#brand_image').val();
+    let enName =  $('#category_name_en').val();
+    let arName =  $('#category_name_ar').val();
+    let enSlug =  $('#category_slug_en').val();
+    let arSlug =  $('#category_slug_ar').val();
+    let status = $('#category_status option:selected').text();
+    let image = $('#category_image').val();
  console.log(status);
                 $.ajax({
                     type: 'POST',
-                    url: "{{url('/admin/brand/update')}}",
+                    url: "{{url('/admin/category/update')}}",
                     data: {
                         id:id,
-                        brand_name_en:enName,
-                        brand_name_ar:arName,
-                        brand_slug_en:enSlug,
-                        brand_slug_ar:arSlug,
-                        brand_status:status,
-                        brand_image:image,
+                        category_name_en:enName,
+                        category_name_ar:arName,
+                        category_slug_en:enSlug,
+                        category_slug_ar:arSlug,
+                        category_status:status,
+                        category_image:image,
                         _token: _token,
                     },
                     dataType: 'JSON',

@@ -7,6 +7,8 @@ use App\Http\Controllers\AdminController;
 */
 use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\SubCategoryController;
 
 /*
 *FrontEnd 
@@ -77,6 +79,27 @@ Route::prefix('/admin/brand')->group(function () {
     Route::post('/update', [BrandController::class, 'updateBrand'])->name('update.brand');
     Route::post('/remove/{id}', [BrandController::class, 'removeBrand']);
 
+
+
+});
+
+
+
+
+//* Admin Category All Routes*/
+Route::prefix('/admin/category')->group(function () {
+    Route::get('/', [CategoryController::class, 'CategoryIndex'])->name('all.category');
+    Route::post('/add', [CategoryController::class, 'addNewCategory'])->name('add.category');
+    Route::get('/edit/{id}', [CategoryController::class, 'editCategory']);
+    Route::post('/update', [CategoryController::class, 'updateCategory'])->name('update.category');
+    Route::post('/remove/{id}', [CategoryController::class, 'removeCategory']);
+
+    //* Admin Sub - Category All Routes*/
+    Route::get('/sub', [SubCategoryController::class, 'SubCategoryIndex'])->name('all.sub.category');
+    Route::post('/sub/add', [SubCategoryController::class, 'addNewSubCategory'])->name('add.sub.category');
+    Route::get('/sub/edit/{id}', [SubCategoryController::class, 'editSubCategory']);
+    Route::post('/sub/update', [SubCategoryController::class, 'updateSubCategory'])->name('update.sub.category');
+    Route::post('/sub/remove/{id}', [SubCategoryController::class, 'removeSubCategory']);
 
 
 });
