@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
+
     <link rel="icon" href="{{asset('backend/images/favicon.ico')}}">
     <title>Admin DashBoard</title>
     
@@ -16,6 +18,7 @@
 	<link rel="stylesheet" href="{{asset('backend/css/style.css')}}">
 	<link rel="stylesheet" href="{{asset('backend/css/skin_color.css')}}">
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
   </head>
 
 <body class="hold-transition dark-skin sidebar-mini theme-primary fixed">
@@ -314,6 +317,8 @@
 	<!-- Sunny Admin App -->
 	<script src="{{asset('backend/js/template.js')}}"></script>
 	<script src="{{asset('backend/js/pages/dashboard.js')}}"></script>
+	<script src="{{asset('../assets/vendor_components/datatable/datatables.min.js')}}"></script>
+<script src="{{asset('backend/js/pages/data-table.js')}}"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 	
 	<script>

@@ -2,7 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+/*
+*Backend 
+*/
 use App\Http\Controllers\Backend\AdminProfileController;
+use App\Http\Controllers\Backend\BrandController;
+
+/*
+*FrontEnd 
+*/
 use App\Http\Controllers\Frontend\IndexController;
 /*
 |--------------------------------------------------------------------------
@@ -60,8 +68,15 @@ Route::post('/user/profile/password/store', [IndexController::class, 'updateUser
 
 
 //* Admin Brands All Routes*/
+ 
 
-Route::prefix('brand')->group(function(){
-    Route::get('/all', [BrandController::class, 'AllBrand'])->name('user.profile');
+Route::prefix('/admin/brand')->group(function () {
+    Route::get('/', [BrandController::class, 'BrandIndex'])->name('all.brand');
+    Route::post('/add', [BrandController::class, 'addNewBrand'])->name('add.brand');
+    Route::get('/edit/{id}', [BrandController::class, 'editBrand']);
+    Route::post('/update', [BrandController::class, 'updateBrand'])->name('update.brand');
+    Route::post('/remove/{id}', [BrandController::class, 'removeBrand']);
+
+
 
 });
