@@ -175,7 +175,10 @@ return Response()->json(['success' => $success,'message' => $message]);
  
 
 
-
+public function GetSubCategory($category_id){
+    $subCat = SubCategory::where('category_id', $category_id)->orderBy('subcategory_name_en', 'ASC')->get();
+    return json_encode($subCat);
+}
 
 
 

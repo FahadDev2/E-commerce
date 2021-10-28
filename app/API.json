@@ -1,0 +1,30 @@
+{
+"ClientInfo": {
+"UserName":"reem@reem.com",
+"Password":"123456789",
+"Version":"v1.0",
+"AccountNumber":"4004636",
+"AccountPin":"432432",
+"AccountEntity": "RUH",
+"AccountCountryCode":"SA",
+"Source":24
+			}, 
+            "Transaction":null,
+            "DestinationAddres" :{
+                "Line1" : "null",
+                "Line2" :"null",
+                "Line3" : "null",
+                "City" : "Alexandria",
+                "StateOrPreovinceCode": "null",
+                "PostCode" :"null",
+                "CountryCode" : "EG",
+                "Longitude": "null",
+                "Latitude":"null",
+                "BuildingNumber": "null",
+                "BuildingName" : "null",
+                "Floor": "null",
+                "Apartment" : "null",
+                "POBox" : "null",
+                "Description":"null"
+            }
+}

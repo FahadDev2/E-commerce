@@ -34,16 +34,20 @@
                 
 <input type="hidden" name="id" id="id" >
 <div class="form-group"> 
- 
+    @php($i =0)
     
     <h5>Category Linked <span class="text-danger">*</span></h5>
     <div class="controls">
         <select name="select" id="select" required="" class="form-control" aria-invalid="false">
-            @foreach ( $categories as  $category)
+           
+          
+        
+            @foreach ( $subcategories as $sub)
+          
+             <option value="{{$sub['category']['id']}}" {{ $sub['category']['id'] == $sub->category_id ? 'selected' : ''}}>{{$sub['category']['category_name_en']}}</option>
             
-             <option value="{{$category->id}}" {{$category->id == $all[$i] ? 'selected' : ''}}>{{$category->category_name_en}}</option>
-            {{$i++}}
              @endforeach
+            
          </select>
     <div class="help-block"></div></div>
 </div>
@@ -180,7 +184,7 @@
                                      @foreach ( $subcategories as $subcategory )
                                          
                                      <tr role="row" class="odd">
-                                        <td class="sorting_1">{{$subcategory['category']['category_name_en']}}</td>
+                                        <td class="sorting_1">{{$subcategory->category_id}} : {{$subcategory['category']['category_name_en']}}</td>
                                         <td>{{$subcategory->subcategory_name_en}}
                                             <small>( Slug: {{$subcategory->subcategory_slug_en}} )</small>
                                         </td>

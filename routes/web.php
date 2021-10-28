@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\Backend\ProductController;
 
 /*
 *FrontEnd 
@@ -98,8 +99,23 @@ Route::prefix('/admin/category')->group(function () {
     Route::get('/sub', [SubCategoryController::class, 'SubCategoryIndex'])->name('all.sub.category');
     Route::post('/sub/add', [SubCategoryController::class, 'addNewSubCategory'])->name('add.sub.category');
     Route::get('/sub/edit/{id}', [SubCategoryController::class, 'editSubCategory']);
+    Route::get('/sub/ajax/{category_id}', [SubCategoryController::class, 'GetSubCategory']);
     Route::post('/sub/update', [SubCategoryController::class, 'updateSubCategory'])->name('update.sub.category');
     Route::post('/sub/remove/{id}', [SubCategoryController::class, 'removeSubCategory']);
+
+
+});
+
+
+
+
+//* Admin Products All Routes*/
+ 
+
+Route::prefix('/admin/product')->group(function () {
+     Route::get('/add', [ProductController::class, 'addProduct'])->name('add.product');
+     Route::post('/save', [ProductController::class, 'saveProduct'])->name('save.product');
+     Route::get('/manage', [ProductController::class, 'ManageProduct'])->name('manage.product');
 
 
 });
